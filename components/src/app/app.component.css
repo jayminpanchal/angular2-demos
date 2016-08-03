@@ -1,0 +1,15 @@
+h1 {
+  color: red;
+}
+
+nav ul {
+  list-style: outside none none;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a{
+  padding: 10px 15px;
+}
