@@ -5,5 +5,5 @@
 <form method="post">
   <input [value]="inputValue"/>
   <input [required]="isRequired"/>
-  <button type="submit">Submit</button>
+  <button type="submit" (click)="alertMe('Hey, button clicked!!')" >Submit</button>
 </form>

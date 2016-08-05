@@ -16,4 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  alertMe(val:string) {
+    alert(val);
+  }
 }
