@@ -1,9 +1,17 @@
 <p>
   {{homeTitle}}
 </p>
+<h1>Passed data from app.component</h1>
+<p>
+  Name: {{user.name}}
+</p>
+
+<p>
+  Email: {{user.email}}
+</p>
 
 <form method="post">
   <input [value]="inputValue"/>
   <input [required]="isRequired"/>
-  <button type="submit" (click)="alertMe('Hey, button clicked!!')" >Submit</button>
+  <button type="submit" (click)="alertMe('Hey, button clicked!!')">Submit</button>
 </form>
