@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +9,7 @@ export class HomeComponent implements OnInit {
   homeTitle = "Welcome to homepage";
   inputValue = "value from databinding";
   isRequired = true;
+  @Input() user;
 
   constructor() {
   }
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  alertMe(val:string) {
+  alertMe(val: string) {
     alert(val);
   }
 }
