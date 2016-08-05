@@ -7,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   homeTitle = "Welcome to homepage";
+  inputValue = "value from databinding";
+  isRequired = true;
 
   constructor() {
   }
