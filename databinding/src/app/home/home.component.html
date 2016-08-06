@@ -1,20 +1,20 @@
-<p>
+<br/>
+<h1>
   {{homeTitle}}
-</p>
-<h1>Passed data from app.component</h1>
+</h1>
+<h3>Passed data from app.component</h3>
 <p>
   Name: {{user.name}}
 </p>
-
 <p>
   Email: {{user.email}}
 </p>
 
 <form method="post">
-  <input [value]="inputValue"/>
-  <input [required]="isRequired"/>
+  <input type="text" [value]="inputValue"/>
+  <input type="text" [required]="isRequired"/>
   <button type="submit" (click)="alertMe('Hey, button clicked!!')">Submit</button>
 </form>
-
-<p>Yelling Event Demo</p>
+<br/>
+<h3>Yelling Event Demo</h3>
 <button (click)="fireYellEvent($event)">Hit me!</button>
