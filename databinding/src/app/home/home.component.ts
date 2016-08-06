@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   fireYellEvent(e){
-    this.onYell.emit(e)
+    this.onYell.emit(e);
   }
 
 }

@@ -15,5 +15,6 @@ export class AppComponent {
 
   yell(e: Event) {
     alert("I am yelling.");
+    console.log(e);
   }
 }
