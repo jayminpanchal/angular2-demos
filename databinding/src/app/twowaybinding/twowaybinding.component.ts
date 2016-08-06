@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class TwowaybindingComponent implements OnInit {
 
   username = "jaymin";
+  usernameWithNgModel = "jaymin";
 
   constructor() {
   }

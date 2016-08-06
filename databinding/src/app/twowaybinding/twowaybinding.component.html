@@ -1,7 +1,11 @@
 <p>
   Two way data binding.
 </p>
-
+<h4>Without ngModel</h4>
 <input type="text" [value]="username" (input)="username=$event.target.value"/>
-
 <p>Hello {{username}}</p>
+
+<h4>With ngModel</h4>
+<input type="text"  [(ngModel)]="usernameWithNgModel" />
+<p>Hello {{usernameWithNgModel}}</p>
+
