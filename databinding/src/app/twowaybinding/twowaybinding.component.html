@@ -1,0 +1,7 @@
+<p>
+  Two way data binding.
+</p>
+
+<input type="text" [value]="username" (input)="username=$event.target.value"/>
+
+<p>Hello {{username}}</p>
