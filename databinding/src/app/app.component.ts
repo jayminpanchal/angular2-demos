@@ -11,5 +11,9 @@ export class AppComponent {
   user = {
     name: 'Jaymin',
     email: 'jayminpanchal10@gmail.com'
+  };
+
+  yell(e: Event) {
+    alert("I am yelling.");
   }
 }
