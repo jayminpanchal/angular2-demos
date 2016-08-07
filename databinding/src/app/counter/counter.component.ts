@@ -17,6 +17,11 @@ export class CounterComponent implements OnInit {
     this.countChange.emit(this.count);
   }
 
+  decrement() {
+    this.count--;
+    this.countChange.emit(this.count);
+  }
+
   ngOnInit() {
   }
 
