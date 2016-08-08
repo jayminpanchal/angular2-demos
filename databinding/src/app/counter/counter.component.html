@@ -2,6 +2,8 @@
 <h3>
   Counter Demo
 </h3>
+<input type="text" [(ngModel)]="min"/>
+<input type="text" [(ngModel)]="max"/>
 <button (click)="decrement()">-</button>
 <span>{{count}}</span>
 <button (click)="increment()">+</button>
