@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-aboutus',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aboutus.component.css']
 })
 export class AboutusComponent implements OnInit {
+  name: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.name = route.snapshot.params['name'];
+  }
 
   ngOnInit() {
   }

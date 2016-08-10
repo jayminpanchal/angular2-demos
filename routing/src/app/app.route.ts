@@ -4,5 +4,5 @@ import {Routes} from "@angular/router";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'aboutus', component: AboutusComponent}
+  {path: 'aboutus/:name', component: AboutusComponent}
 ];
