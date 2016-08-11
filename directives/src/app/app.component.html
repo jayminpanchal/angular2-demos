@@ -8,6 +8,12 @@
 <p *ngIf="true">only show if test is true</p>
 <p *ngIf="test">only show if test is true</p>
 
+<ul>
+  <li *ngFor="let user of users">
+    {{user.name}}
+  </li>
+</ul>
+
 <style>
   .blue {
     color: blue;
