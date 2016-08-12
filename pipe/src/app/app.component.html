@@ -11,3 +11,17 @@
     {{user.name | slice:1:5}}
   </li>
 </ul>
+
+<h1>
+  Filter Pipe Demo
+</h1>
+<form id="filter">
+  <label>Filter by Name:</label>
+  <input type="text" [(ngModel)]="term"/>
+</form>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{user.name | slice:1:5}}
+  </li>
+</ul>
