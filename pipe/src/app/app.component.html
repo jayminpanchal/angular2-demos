@@ -17,11 +17,11 @@
 </h1>
 <form id="filter">
   <label>Filter by Name:</label>
-  <input type="text" [(ngModel)]="term"/>
+  <input type="text" [(ngModel)]="term" name="term"/>
 </form>
 
 <ul>
-  <li *ngFor="let user of users">
-    {{user.name | slice:1:5}}
+  <li *ngFor="let user of users | filter:term">
+    {{user.name}}
   </li>
 </ul>
