@@ -2,3 +2,10 @@
   {{title}}
   <button type="button" (click)="logIt()">Log Me!!</button>
 </h1>
+<h2>Fetched from the json file</h2>
+
+<ul>
+  <li *ngfor="let user of users">
+    {{user.name}}
+  </li>
+</ul>

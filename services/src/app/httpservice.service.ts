@@ -8,8 +8,11 @@ export class HttpserviceService {
   }
 
   fetchUsers() {
-    return this.http.get('/users.json').subscribe(
-      (data) => console.log(data)
+    return this.http.get('/users.json').map(
+      (res) => res.json()
     );
+    /*return this.http.get('/users.json').subscribe(
+     (data) => console.log(data)
+     );*/
   }
 }

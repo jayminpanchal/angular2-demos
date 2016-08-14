@@ -10,6 +10,7 @@ import {HttpserviceService} from "./httpservice.service";
 })
 export class AppComponent implements OnInit {
   title = 'Service Demo!';
+  users = [];
 
   constructor(private logger: LoggingService, private httpService: HttpserviceService) {
   }
@@ -19,6 +20,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.httpService.fetchUsers();
+    this.httpService.fetchUsers().subscribe(
+      (data) => this.users = data
+    );
   }
 }
