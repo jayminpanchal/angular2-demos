@@ -1,7 +1,6 @@
 .banner {
     position: relative;
-    padding: 50px 0 140px;
-    background-color: #607D8B;
+    padding: 50px 0 30px;
 }
 
 .banner .tech-icon {
@@ -14,4 +13,23 @@
     color: #FFFFFF;
     font-size: 70px;
     margin: 20px 0 0;
+}
+
+.banner .author-name {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin: 20px 0 0;
+}
+
+.col-center {
+    float: none !important;
+    margin: 0 auto;
+}
+
+#content p {
+    font-size: 17px;
+    color: #2b2b2b;
+    text-align: justify;
+    margin-bottom: 12px;
 }

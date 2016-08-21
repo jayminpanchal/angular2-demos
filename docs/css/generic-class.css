@@ -186,6 +186,14 @@
     color: #9E9E9E !important
 }
 
+.bgm-darkgray {
+    background-color: #3E3E3E !important
+}
+
+.c-darkgray {
+    color: #3E3E3E !important
+}
+
 .bgm-bluegray {
     background-color: #607D8B !important
 }
@@ -584,4 +592,16 @@
 
 .f-700 {
     font-weight: 700 !important
+}
+
+.border-bluegray {
+    border-color: #607D8B !important;
+}
+
+.border-red {
+    border-color: #F44336 !important;
+}
+
+.text-italic {
+    font-style: italic;
 }
