@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/generic-class.css"/>
     <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
     <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="plugins/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"/>
 </head>
 <body>
 <section id="main">
@@ -21,7 +23,349 @@
             By Jaymin Panchal
         </p>
     </header>
-
+    <section id="content">
+        <div class="container">
+            <div class="card m-t-20">
+                <div class="card-body card-padding">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Getting started with Angular2</h1>
+                            <hr class="border-bluegray m-0"/>
+                        </div>
+                    </div>
+                    <div class="row m-t-20">
+                        <div class="col-md-9">
+                            <div class="d-block" id="getting-started">
+                                <p>
+                                    Angular is a framework for building client applications in HTML and either
+                                    JavaScript
+                                    or a language like TypeScript that compiles to JavaScript.
+                                </p>
+                                <p>
+                                    The framework consists of several libraries, some of them core and some optional.
+                                </p>
+                                <p>
+                                    Then you launch the app by <em>bootstrapping</em> the root module. Angular takes
+                                    over, presenting your application content in a browser and responding to user
+                                    interactions according to the instructions you've provided.
+                                </p>
+                            </div>
+                            <div class="d-block" id="major-components">
+                                <h3>
+                                    Major Components
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p class="text-center">
+                                    <img src="images/overview2.png" class="img-rounded img-thumbnail"
+                                         alt="Component of Angular2"/>
+                                </p>
+                                <p>
+                                    The architecture diagram identifies the eight main building blocks of an Angular
+                                    application:
+                                </p>
+                                <ul>
+                                    <li><a href="#modules">Modules</a></li>
+                                    <li><a href="#components">Components</a></li>
+                                    <li><a href="#templates">Templates</a></li>
+                                    <li><a href="#metadata">Metadata</a></li>
+                                    <li><a href="#data-binding">Data binding</a></li>
+                                    <li><a href="#directives">Directives</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#dependency-injection">Dependency injection</a></li>
+                                </ul>
+                            </div>
+                            <div class="d-block" id="modules">
+                                <h3>
+                                    Modules
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>
+                                    Angular apps are modular and Angular has its own modularity system called Angular
+                                    modules or NgModules.
+                                </p>
+                                <p>
+                                    Angular modules are a big deal. This page introduces modules; the Angular modules
+                                    page covers them in depth. Every Angular app has at least one Angular module class,
+                                    the root module, conventionally named <code>AppModule</code>
+                                </p>
+                                <p>An Angular module, whether a root or feature, is a class with an
+                                    <code>@NgModule</code> decorator.</p>
+                                <blockquote>
+                                    <p>
+                                        Decorators are functions that modify JavaScript classes. Angular has many
+                                        decorators that attach metadata to classes so that it knows what those classes
+                                        mean and how they should work.
+                                    </p>
+                                </blockquote>
+                                <p><code>NgModule</code> is a decorator function that takes a single metadata object
+                                    whose properties describe the module.
+                                    The most important properties are:</p>
+                                <ul>
+                                    <li><p><code>declarations</code> - the <em>view classes</em> that belong to this
+                                        module.
+                                        Angular has three kinds of view classes: <a href="#components">components</a>,
+                                        <a href="#directives">directives</a>, and <a href="pipes.html">pipes</a>.</p>
+                                    </li>
+                                    <li><p><code>exports</code> - the subset of declarations that should be visible and
+                                        usable in the component <a href="#templates">templates</a> of other modules.</p>
+                                    </li>
+                                    <li><p><code>imports</code> - other modules whose exported classes are needed by
+                                        component templates declared in <em>this</em> module.</p>
+                                    </li>
+                                    <li><p><code>providers</code> - creators of <a href="#services">services</a> that
+                                        this module contributes to
+                                        the global collection of services; they become accessible in all parts of the
+                                        app.</p>
+                                    </li>
+                                    <li><p><code>bootstrap</code> - the main application view, called the <em>root
+                                        component</em>,
+                                        that hosts all other app views. Only the <em>root module</em> should set this
+                                        <code>bootstrap</code> property.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-block" id="components">
+                                <h3>
+                                    Components
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>A <em>component</em> controls a patch of screen called a <em>view</em>.</p>
+                                <p>For example, the following views are controlled by components:</p>
+                                <ul>
+                                    <li><p>The app root with the navigation links.</p></li>
+                                    <li><p>The list of heroes.</p></li>
+                                    <li><p>The hero editor.</p></li>
+                                </ul>
+                                <p>You define a component's application logic—what it does to support the view—inside a
+                                    class.
+                                    The class interacts with the view through an API of properties and methods.</p>
+                                <p>Angular creates, updates, and destroys components as the user moves through the
+                                    application.
+                                    Your app can take action at each moment in this lifecycle through optional
+                                    <a href="https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html">lifecycle
+                                        hooks</a>, like
+                                    <code>ngOnInit()</code></p>
+                            </div>
+                            <div class="d-block" id="templates">
+                                <h3>
+                                    Templates
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>You define a component's view with its companion <strong>template</strong>. A
+                                    template is a form of HTML
+                                    that tells Angular how to render the component.</p>
+                                <p>A template looks like regular HTML, except for a few differences.</p>
+                            </div>
+                            <div class="d-block" id="metadata">
+                                <h3>
+                                    Metadata
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>Metadata tells Angular how to process a class.</p>
+                                <p>In TypeScript, you attach metadata by using a <strong>decorator</strong></p>
+                                <p>Here is the <code>@Component</code> decorator, which identifies the class
+                                    immediately below it as a component class.</p>
+                                <p>The <code>@Component</code> decorator takes a required configuration object with the
+                                    information Angular needs to create and present the component and its view.</p>
+                                <p>Here are a few of the possible <code>@Component</code> configuration options:</p>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <code>moduleId</code>: sets the source of the base address
+                                            (<code>module.id</code>) for module-relative URLs such as the
+                                            <code>templateUrl</code>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <code>selector</code>: CSS selector that tells Angular to create and insert
+                                            an instance of this component where it finds a tag in <em>parent</em> HTML.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <code>templateUrl</code>: module-relative address of this component's HTML
+                                            template, shown <a href="#templates">above</a>.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <code>providers</code>: array of <strong>dependency injection
+                                            providers</strong> for services that the component requires.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-block" id="databinding">
+                                <h3>
+                                    Data Binding
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>Without a framework, you would be responsible for pushing data values into the HTML
+                                    controls and turning user responses into actions and value updates. Writing such
+                                    push/pull logic by hand is tedious, error-prone, and a nightmare to read as any
+                                    experienced jQuery programmer can attest.</p>
+                                <p>Angular supports <strong>data binding</strong>,
+                                    a mechanism for coordinating parts of a template with parts of a component.
+                                    Add binding markup to the template HTML to tell Angular how to connect both sides.
+                                </p>
+                                <p>As the diagram shows, there are four forms of data binding syntax. Each form has a
+                                    direction — to the DOM, from the DOM, or in both directions.</p>
+                                <p>In two-way binding, a data property value flows to the input box from the component
+                                    as with property binding.
+                                    The user's changes also flow back to the component, resetting the property to the
+                                    latest value, as with event binding.</p>
+                                <p>Angular processes <em>all</em> data bindings once per JavaScript event cycle,
+                                    from the root of the application component tree through all child components.</p>
+                            </div>
+                            <div class="d-block" id="directives">
+                                <h3>
+                                    Directives
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>Angular templates are <em>dynamic</em>. When Angular renders them, it transforms the
+                                    DOM
+                                    according to the instructions given by <strong>directives</strong>.</p>
+                                <p>A directive is a class with a <code>@Directive</code> decorator.
+                                    A component is a <em>directive-with-a-template</em>;
+                                    a <code>@Component</code> decorator is actually a <code>@Directive</code> decorator
+                                    extended with template-oriented features.</p>
+                                <blockquote>
+                                    <p>While <strong>a component is technically a directive</strong>,
+                                        components are so distinctive and central to Angular applications that this
+                                        architectural overview separates components from directives.</p>
+                                </blockquote>
+                                <p>Two <em>other</em> kinds of directives exist: <em>structural</em> and
+                                    <em>attribute</em> directives.</p>
+                                <p>They tend to appear within an element tag as attributes do,
+                                    sometimes by name but more often as the target of an assignment or a binding.</p>
+                                <p><strong>Structural</strong> directives alter layout by adding, removing, and
+                                    replacing elements in DOM.</p>
+                            </div>
+                            <div class="d-block" id="services">
+                                <h3>
+                                    Services
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p><em>Service</em> is a broad category encompassing any value, function, or feature
+                                    that your application needs.</p>
+                                <p>Almost anything can be a service.
+                                    A service is typically a class with a narrow, well-defined purpose. It should do
+                                    something specific and do it well.</p>
+                                <ul>
+                                    <li>logging service</li>
+                                    <li>data service</li>
+                                    <li>message bus</li>
+                                    <li>tax calculator</li>
+                                    <li>application configuration</li>
+                                </ul>
+                                <p>There is nothing specifically <em>Angular</em> about services. Angular has no
+                                    definition of a service.
+                                    There is no service base class, and no place to register a service.</p>
+                                <p>Yet services are fundamental to any Angular application. Components are big consumers
+                                    of services.</p>
+                            </div>
+                            <div class="d-block" id="dependency-injection">
+                                <h3>
+                                    Dependency Injection
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p><em>Dependency injection</em> is a way to supply a new instance of a class
+                                    with the fully-formed dependencies it requires. Most dependencies are services.
+                                    Angular uses dependency injection to provide new components with the services they
+                                    need.</p>
+                                <p>When Angular creates a component, it first asks an <strong>injector</strong> for
+                                    the services that the component requires.</p>
+                                <p>An injector maintains a container of service instances that it has previously
+                                    created.
+                                    If a requested service instance is not in the container, the injector makes one and
+                                    adds it to the container
+                                    before returning the service to Angular.
+                                    When all requested services have been resolved and returned,
+                                    Angular can call the component's constructor with those services as arguments.
+                                    This is <em>dependency injection</em>.</p>
+                                <p>Points to remember about dependency injection:</p>
+                                <ul>
+                                    <li><p>Dependency injection is wired into the Angular framework and used
+                                        everywhere.</p>
+                                    </li>
+                                    <li><p>The <em>injector</em> is the main mechanism.</p>
+                                        <ul>
+                                            <li>An injector maintains a <em>container</em> of service instances that it
+                                                created.
+                                            </li>
+                                            <li>An injector can create a new service instance from a <em>provider</em>.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><p>A <em>provider</em> is a recipe for creating a service.</p>
+                                    </li>
+                                    <li><p>Register <em>providers</em> with injectors.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-block" id="tutorial-series">
+                                <h3>
+                                    Tutorial Series
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <ul class="list-unstyled m-t-10">
+                                    <li>
+                                        <a href="install-angular2.html" class="list-group-item">
+                                            1. Environment Setup
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            2. Hello World
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            3. Component
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            4. Data Binding
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            5. Routing
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            6. Directive
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            7. Pipe
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            8. Service
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bgm-darkgray p-t-20 p-b-20">
+        <p class="text-center m-b-0 f-17 c-white">
+            Created with <i class="zmdi zmdi-favorite c-red f-20"></i> By
+            <a href="http://github.com/jayminpanchal">Jaymin Panchal</a>
+        </p>
+    </footer>
 </section>
 <script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
