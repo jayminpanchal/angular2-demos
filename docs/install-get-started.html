@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Installation &amp; Setup | Angular2 Tutorials | Jaymin Panchal</title>
+    <link rel="stylesheet" type="text/css" href="css/app_1.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/generic-class.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="plugins/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/highlight/styles/atom-one-dark.css"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<section id="main">
+    <header class="banner bgm-bluegray">
+        <p class="text-center m-0">
+            <img src="images/angular.svg" class="tech-icon">
+        </p>
+        <h1 class="tech-title">
+            Angular2 Tutorials
+        </h1>
+        <p class="author-name">
+            By Jaymin Panchal
+        </p>
+    </header>
+    <section id="content">
+        <div class="container">
+            <div class="card m-t-20">
+                <div class="card-body card-padding">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>1.Installation and Setup</h1>
+                            <hr class="border-bluegray m-0"/>
+                        </div>
+                    </div>
+                    <div class="row m-t-20">
+                        <div class="col-md-9">
+                            <div class="d-block" id="getting-started">
+                                <p>
+                                    We need to install NodeJS for Package manager and managing the server. So download
+                                    the NodeJS from the official site <a href="https://nodejs.org/en/">here</a>.
+                                </p>
+
+                                <p>
+                                    Angular uses TypeScript which is a primary language for developing of Angular
+                                    applications.
+                                </p>
+                                <p>
+                                    The TypeScript is a super set of JavaScript which is migrated to TypeScript and code
+                                    written in TypeScript makes less prone to run time errors.
+                                </p>
+                                <p>
+                                    Install Typescript globally via npm by running the following command in your
+                                    terminal :
+                                </p>
+                                <pre><code class="javascript">npm install -g typescript</code></pre>
+                                <p>
+                                    Install the angular cli (command line interface) to easily manage the angular
+                                    project. It is better to use for faster development.
+                                </p>
+                                <pre><code class="javascript">npm install -g angular-cli</code></pre>
+                            </div>
+                            <div class="d-block" id="amgular-cli">
+                                <h3>
+                                    Angular CLI
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>It included things like:</p>
+                                <ul>
+                                    <li>Creating our app files</li>
+                                    <li>Configuring TypeScript and Typings</li>
+                                    <li>Adding script tags for
+                                        <ul>
+                                            <li>Angular 2</li>
+                                            <li>Rx.js</li>
+                                            <li>System.js</li>
+                                        </ul>
+                                    </li>
+                                    <li>Configuring System.js</li>
+                                    <li>Creating our Angular 2 component</li>
+                                    <li>Bootstrapping our Angular 2 application</li>
+                                </ul>
+                                <h3><code>ng new</code></h3>
+                                <p>The Angular2 CLI makes it easy to create an application that already works, right out
+                                    of the box. It already follows the best project structure!</p>
+                                <p>Options:</p>
+                                <ul>
+                                    <li><code>--dry-run</code> (alias <code>d</code>): Only output the files created and
+                                        operations performed. It doesn't actually create the project.
+                                    </li>
+                                    <li><code>--verbose</code> (alias <code>v</code>): Show more information</li>
+                                    <li><code>--skip-npm</code>: Don't run any npm commands like installing dependencies
+                                    </li>
+                                    <li><code>--skip-git</code>: Don't create a new git repo for this project</li>
+                                    <li><code>--directory</code>: Specify the directory you want to create this project
+                                        in
+                                    </li>
+                                </ul>
+                                <h3><code>ng generate</code></h3>
+                                <p>That's a ton of functionality and helps speed up development.</p>
+                                <ul>
+                                    <li>Create a new component</li>
+                                    <li>Create a new directive</li>
+                                    <li>Create a new route</li>
+                                    <li>Create a new pipe</li>
+                                    <li>Create a new service</li>
+                                </ul>
+                                <p>Options:</p>
+                                <ul>
+                                    <li><code>--flat</code>: Don't create the code in it's own directory. Just add all
+                                        files to the current directory.
+                                    </li>
+                                    <li><code>--route=&lt;route&gt;</code>: Specify the parent route. Only used for
+                                        generating <strong>components</strong> and <strong>routes</strong>.
+                                    </li>
+                                    <li><code>--skip-router-generation</code>: Don't create the route config. Only used
+                                        for generating <strong>routes</strong>.
+                                    </li>
+                                    <li><code>--default</code>: The generated route should be a default route.</li>
+                                    <li><code>--lazy</code>: Specify if route is lazy. <code>default true</code></li>
+                                </ul>
+                                <h3><code>ng serve</code></h3>
+                                <p>Another really cool thing that our CLI allows us to do is to serve our application in
+                                    the browser. Previously, we would have to create a server using
+                                    <code>lite-server</code> or create our own Node (or other) server.</p>
+                            </div>
+                            <div>
+                                <h3>
+                                    More Commands
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <ul>
+                                    <li>ng build</li>
+                                    <li>ng test: Run unit tests with karma</li>
+                                    <li>ng e2e: Run end-to-end tests with protractor</li>
+                                    <li>ng get: Gets values for project</li>
+                                    <li>ng set: Sets values for project</li>
+                                    <li>ng github-pages:deploy: Build the app for production, setup GitHub repo, and
+                                        publish
+                                    </li>
+                                    <li>ng lint: to analyze code
+                                    </li>
+                                    <li>ng format</li>
+                                    <li>ng doc</li>
+                                    <li>ng version: Get the version of the CLI</li>
+                                </ul>
+                            </div>
+                            <div class="d-block" id="tutorial-series">
+                                <h3>
+                                    Next Tutorial
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <ul class="list-unstyled m-t-10">
+                                    <li>
+                                        <a href="hello-world.html" class="list-group-item">
+                                            2. Hello World
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bgm-darkgray p-t-20 p-b-20">
+        <p class="text-center m-b-0 f-17 c-white">
+            Created By
+            <a href="http://github.com/jayminpanchal">Jaymin Panchal</a>
+        </p>
+    </footer>
+</section>
+<script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+</body>
+</html>
