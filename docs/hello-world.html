@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World | Angular2 Tutorials | Jaymin Panchal</title>
+    <link rel="stylesheet" type="text/css" href="css/app_1.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/generic-class.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="plugins/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/highlight/styles/atom-one-dark.css"/>
+</head>
+<body>
+<section id="main">
+    <header class="banner bgm-bluegray">
+        <p class="text-center m-0">
+            <img src="images/angular.svg" class="tech-icon">
+        </p>
+        <h1 class="tech-title">
+            Angular2 Tutorials
+        </h1>
+        <p class="author-name">
+            By Jaymin Panchal
+        </p>
+    </header>
+    <section id="content">
+        <div class="container">
+            <div class="card m-t-20">
+                <div class="card-body card-padding">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>2.Hello World</h1>
+                            <hr class="border-bluegray m-0"/>
+                        </div>
+                    </div>
+                    <div class="row m-t-20">
+                        <div class="col-md-9">
+                            <div class="d-block" id="create-app">
+                            </div>
+                            <div class="d-block" id="tutorial-series">
+                                <h3>
+                                    Next Tutorial
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <ul class="list-unstyled m-t-10">
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            3. Component
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bgm-darkgray p-t-20 p-b-20">
+        <p class="text-center m-b-0 f-17 c-white">
+            Created By
+            <a href="http://github.com/jayminpanchal">Jaymin Panchal</a>
+        </p>
+    </footer>
+</section>
+<script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+</body>
+</html>
