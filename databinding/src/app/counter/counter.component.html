@@ -5,10 +5,18 @@
     </h3>
   </div>
   <div class="panel-body">
-    <input type="text" [(ngModel)]="min"/>
-    <input type="text" [(ngModel)]="max"/>
-    <button (click)="decrement()">-</button>
-    <span>{{count}}</span>
-    <button (click)="increment()">+</button>
+    <div class="row">
+      <div class="col-md-3">
+        <input type="text" [(ngModel)]="min" class="form-control"/>
+      </div>
+      <div class="col-md-3">
+        <input type="text" [(ngModel)]="max" class="form-control"/>
+      </div>
+      <div class="col-md-6">
+        <button (click)="decrement()" class="btn btn-danger">-</button>
+        <span>&nbsp;{{count}}&nbsp;</span>
+        <button (click)="increment()" class="btn btn-success">+</button>
+      </div>
+    </div>
   </div>
 </div>
