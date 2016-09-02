@@ -6,7 +6,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  homeTitle = "Welcome to homepage";
+  homeTitle = "Homepage";
   inputValue = "value from databinding";
   isRequired = true;
   @Input() user;

@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
-  name = 'jaymin';
+  title = 'Data Binding works!';
+  name = 'Jaymin Panchal';
   user = {
     name: 'Jaymin',
     email: 'jayminpanchal10@gmail.com'

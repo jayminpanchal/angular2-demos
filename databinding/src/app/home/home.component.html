@@ -1,20 +1,36 @@
-<br/>
 <h1>
   {{homeTitle}}
 </h1>
-<h3>Passed data from app.component</h3>
-<p>
-  Name: {{user.name}}
-</p>
-<p>
-  Email: {{user.email}}
-</p>
+<hr/>
 
-<form method="post">
-  <input type="text" [value]="inputValue"/>
-  <input type="text" [required]="isRequired"/>
-  <button type="submit" (click)="alertMe('Hey, button clicked!!')">Submit</button>
-</form>
-<br/>
-<h3>Yelling Event Demo</h3>
-<button (click)="fireYellEvent($event)">Hit me!</button>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Passed data from Home Component</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      Name: {{user.name}}
+    </p>
+    <p>
+      Email: {{user.email}}
+    </p>
+    <div class="row">
+      <div class="col-md-12">
+        <form method="post">
+          <input type="text" [value]="inputValue"/>
+          <input type="text" [required]="isRequired"/>
+          <button type="submit" (click)="alertMe('Hey, button clicked!!')">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Yelling Event Demo</h3>
+  </div>
+  <div class="panel-body">
+
+    <button (click)="fireYellEvent($event)">Click me!</button>
+  </div>
+</div>
