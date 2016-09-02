@@ -1,12 +1,31 @@
-<br/>
-<h3>
-  Two way data binding.
-</h3>
-<h4>Without ngModel</h4>
-<input type="text" [value]="username" (input)="username=$event.target.value"/>
-<p>Hello {{username}}</p>
-<br/>
-<h4>With ngModel</h4>
-<input type="text"  [(ngModel)]="usernameWithNgModel" />
-<p>Hello {{usernameWithNgModel}}</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      Two way data binding Component
+    </h3>
+  </div>
+</div>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      Without ngModel
+    </h3>
+  </div>
+  <div class="panel-body">
+    <input type="text" [value]="username" (input)="username=$event.target.value"/>
+    <p>Hello {{username}}</p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      With ngModel
+    </h3>
+  </div>
+  <div class="panel-body">
+    <input type="text"  [(ngModel)]="usernameWithNgModel" />
+    <p>Hello {{usernameWithNgModel}}</p>
+  </div>
+</div>
