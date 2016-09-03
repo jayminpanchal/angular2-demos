@@ -1,18 +1,23 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        {{title}}
+      </h1>
+      <a href="#" [ngClass]="{blue: true,red:false,underline:true}">This is the example of ngClass</a>
+      <a href="#" [ngClass]="{blue: false,red:true,underline:true}">This is the example of ngClass</a>
 
-<a href="#" [ngClass]="{blue: true,red:false,underline:true}">This is the example of ngClass</a>
-<a href="#" [ngClass]="{blue: false,red:true,underline:true}">This is the example of ngClass</a>
+      <p *ngIf="true">only show if test is true</p>
+      <p *ngIf="test">only show if test is true</p>
 
-<p *ngIf="true">only show if test is true</p>
-<p *ngIf="test">only show if test is true</p>
-
-<ul>
-  <li *ngFor="let user of users">
-    {{user.name}}
-  </li>
-</ul>
+      <ul>
+        <li *ngFor="let user of users">
+          {{user.name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <style>
   .blue {
