@@ -1,11 +1,29 @@
-<h1>
-  {{title}}
-  <button type="button" (click)="logIt()">Log Me!!</button>
-</h1>
-<h2>Fetched from the json file</h2>
-
-<ul>
-  <li *ngFor="let user of users">
-    {{user.name}}
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        {{title}}
+      </h1>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Simple Service</h2>
+        </div>
+        <div class="panel-body">
+          <button type="button" (click)="logIt()" class="btn btn-info">Log Me!!</button>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Fetched from the json file</h2>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li *ngFor="let user of users">
+              {{user.name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
