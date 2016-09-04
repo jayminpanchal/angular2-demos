@@ -1,28 +1,45 @@
-<h1>
-  {{title | uppercase}}
-</h1>
-<ul>
-  <li *ngFor="let user of users">
-    {{user.name | slice:1}}
-  </li>
-</ul>
-<ul>
-  <li *ngFor="let user of users">
-    {{user.name | slice:1:5}}
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        {{title | uppercase}}
+      </h1>
+      <div class="panel panel-default">
+        <div class="panel-heading ">
+          <h2 class="panel-title">Slice Demo</h2>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li *ngFor="let user of users">
+              {{user.name | slice:1}}
+            </li>
+          </ul>
+          <ul>
+            <li *ngFor="let user of users">
+              {{user.name | slice:1:5}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">
+            Filter Pipe Demo
+          </h2>
+        </div>
+        <div class="panel-body">
+          <form id="filter">
+            <label>Filter by Name:</label>
+            <input type="text" [(ngModel)]="term" name="term"/>
+          </form>
 
-<h1>
-  Filter Pipe Demo
-</h1>
-
-<form id="filter">
-  <label>Filter by Name:</label>
-  <input type="text" [(ngModel)]="term" name="term"/>
-</form>
-
-<ul>
-  <li *ngFor="let user of users | filter:term">
-    {{user.name}}
-  </li>
-</ul>
+          <ul>
+            <li *ngFor="let user of users | filter:term">
+              {{user.name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
