@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World | Angular2 Tutorials | Jaymin Panchal</title>
+    <link rel="stylesheet" type="text/css" href="css/app_1.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/generic-class.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="plugins/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/highlight/styles/atom-one-dark.css"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<section id="main">
+    <header class="banner bgm-bluegray">
+        <p class="text-center m-0">
+            <img src="images/angular.svg" class="tech-icon">
+        </p>
+        <h1 class="tech-title">
+            Angular2 Tutorials
+        </h1>
+        <p class="author-name">
+            By Jaymin Panchal
+        </p>
+    </header>
+    <section id="content">
+        <div class="container">
+            <div class="card m-t-20">
+                <div class="card-body card-padding">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>2.Hello World</h1>
+                            <hr class="border-bluegray m-0"/>
+                        </div>
+                    </div>
+                    <div class="row m-t-20">
+                        <div class="col-md-9">
+                            <div class="d-block" id="create-app">
+                                <p>
+                                    We use Angular CLI to create project. Type following command to create new angular
+                                    app
+                                </p>
+                                <pre><code class="javascript">ng new helloworld</code></pre>
+                                <p>
+                                    The above command will create the helloworld directory with the following file
+                                    structure.
+                                </p>
+                                <pre><code class="css">├── helloworld/
+│   ├── e2e
+│   ├── node_modules
+│   ├── src
+│   │   ├──app
+│   │   │   ├──app.component.css
+│   │   │   ├──app.component.html
+│   │   │   ├──app.component.ts
+│   │   │   ├──app.module.ts
+│   │   │   ├──index.ts
+│   │   ├──assets
+│   │   ├──environments
+│   │   ├──index.html
+│   │   ├──main.ts
+│   │   ├──polyfill.ts
+│   │   ├──styles.css
+│   │   ├──test.ts
+│   │   ├──tsconfig.json
+│   │   ├──typings.d.ts
+│   ├── angular-cli.json
+│   ├── karma.cf.js
+│   ├── package.json
+│   ├── protractor.conf.json
+│   ├── tslint.json</code></pre>
+                                <p><b>e2e</b> folder containing test files, configurations for performing end to end
+                                    testing.</p>
+                                <p><b>node_modules</b> folder contains all packages restored as per package.json</p>
+                                <p><b>src</b> folder is the main application development folder containing template HTML
+                                    files, TS files, components.</p>
+                                <p><b>main.ts, tsconfig.json, index.html etc</b> are essential files needed for running
+                                    application</p>
+                                <p><b>packages.json</b> contain essential file which contain reference to all packages
+                                    needed for running Angular 2 app. See .gitignore file also. Automatically
+                                    “OurPlanets” application is GIT repo, which we can push it if needed.</p>
+                            </div>
+                            <div class="d-block" id="tutorial-series">
+                                <h3>
+                                    Next Tutorial
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <ul class="list-unstyled m-t-10">
+                                    <li>
+                                        <a href="component.html" class="list-group-item">
+                                            3. Component
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bgm-darkgray p-t-20 p-b-20">
+        <p class="text-center m-b-0 f-17 c-white">
+            Created By
+            <a href="http://github.com/jayminpanchal">Jaymin Panchal</a>
+        </p>
+    </footer>
+</section>
+<script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+</body>
+</html>

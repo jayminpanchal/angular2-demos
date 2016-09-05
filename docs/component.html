@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component | Angular2 Tutorials | Jaymin Panchal</title>
+    <link rel="stylesheet" type="text/css" href="css/app_1.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/generic-class.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="plugins/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/highlight/styles/atom-one-dark.css"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<section id="main">
+    <header class="banner bgm-bluegray">
+        <p class="text-center m-0">
+            <img src="images/angular.svg" class="tech-icon">
+        </p>
+        <h1 class="tech-title">
+            Angular2 Tutorials
+        </h1>
+        <p class="author-name">
+            By Jaymin Panchal
+        </p>
+    </header>
+    <section id="content">
+        <div class="container">
+            <div class="card m-t-20">
+                <div class="card-body card-padding">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>3.Component</h1>
+                            <hr class="border-bluegray m-0"/>
+                        </div>
+                    </div>
+                    <div class="row m-t-20">
+                        <div class="col-md-9">
+                            <div class="d-block" id="create-app">
+                                <p>
+                                    In Angular 2, “everything is a component.” Components are the main way we build and
+                                    specify elements and logic on the page, through both custom elements and attributes
+                                    that add functionality to our existing components.
+                                </p>
+                                <p>
+                                    Angular 2 applications are actually made up of a hierarchy of components – they
+                                    begin with a root component that contains as descendants all the components used in
+                                    the application. Components are intended to be self-contained because we want to
+                                    encapsulate our component functions and we don’t want other code to arbitrarily
+                                    reach into our components to read or change properties. Also, we don’t want our
+                                    component to affect another component written by someone else. An obvious example is
+                                    CSS – if we set CSS for one component we don’t want our CSS to “bleed out” to
+                                    another components just as we don’t want other CSS to “bleed in” to our component.
+                                </p>
+                                <p>
+                                    At the same time components do need to exchange data. In Angular 2, a component can
+                                    receive data from its parent as long as the receiving component has specifically
+                                    said it is willing to receive data. Similarly, components can send data to their
+                                    parents by trigger an event the parent listens for.
+                                </p>
+                                <p>
+                                    Component has mainly three files:
+                                </p>
+                                <ul>
+                                    <li>
+                                        <code>.ts file</code>: All the working of our component will be here.
+                                    </li>
+                                    <li>
+                                        <code>.html file</code>: The designing portion of our component.
+                                    </li>
+                                    <li>
+                                        <code>.css</code>: The individual css for the component.
+                                    </li>
+                                </ul>
+                                <p>
+                                    To generate the component type following command:
+                                </p>
+                                <pre><code class="css">ng g c</code></pre>
+                                <ul>
+                                    <li>
+                                        <code>g</code>: generate
+                                    </li>
+                                    <li>
+                                        <code>c</code>: component
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-block" id="root-component">
+                                <h3>
+                                    Default Component
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p class="m-t-5">app.component.ts (AppComponent class)</p>
+                                <pre><code class="javascript">import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Components with basic CSS';
+}
+</code></pre>
+                                <p>
+                                    Angular2 uses Annotations to define components like <code>@Component</code>
+                                </p>
+                                <p>
+                                    these annotations allow us to attach information to our component. We can configure
+                                    the selector our Component will look for to instantiate itself (like
+                                    <code>&lt;app-root&gt;</code>), and also set the template.
+                                </p>
+                                <p><code>@Component</code> is the core annotation, and has a few important parameters:
+                                </p>
+                                <p>
+                                    The <code>selector</code> param is the replacement for the auto-naming system of
+                                    directives in v1 and is now explicit: you must set it to exactly what you want the
+                                    new component to be named in markup. It works much like <code>querySelector</code>.
+                                </p>
+                                <p>
+                                    The <code>providers</code> param is part of the new Dependency Injection system, and
+                                    configures which services we want to inject into our component (more on this in a
+                                    later post).
+                                </p>
+                                <p>
+                                    We can use provide a template either inline, using <code>templateUrl</code>, or
+                                    point to an external file using <code>templateUrl</code>. This similar to how we
+                                    defined
+                                    templates for custom directives in Angular 1.
+                                </p>
+                                <p>
+                                    We can provide the css that we want to apply for that particular component using
+                                    <code>styleUrls</code>.
+                                </p>
+                                <p>
+                                    The exported class is where we can define any variables or functions that our
+                                    component's template will be using
+                                </p>
+                            </div>
+                            <div class="d-block" id="tutorial-series">
+                                <h3>
+                                    Next Tutorial
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <ul class="list-unstyled m-t-10">
+                                    <li>
+                                        <a href="#" class="list-group-item">
+                                            4. Data Binding
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bgm-darkgray p-t-20 p-b-20">
+        <p class="text-center m-b-0 f-17 c-white">
+            Created By
+            <a href="http://github.com/jayminpanchal">Jaymin Panchal</a>
+        </p>
+    </footer>
+</section>
+<script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plugins/highlight/highlight.pack.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+</body>
+</html>
