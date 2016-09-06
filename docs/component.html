@@ -31,7 +31,7 @@
                 <div class="card-body card-padding">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>3.Component</h1>
+                            <h1>3. Component</h1>
                             <hr class="border-bluegray m-0"/>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                                 <p>
                                     Component has mainly three files:
                                 </p>
-                                <ul>
+                                <ul class="list-arrow">
                                     <li>
                                         <code>.ts file</code>: All the working of our component will be here.
                                     </li>
@@ -76,8 +76,8 @@
                                 <p>
                                     To generate the component type following command:
                                 </p>
-                                <pre><code class="css">ng g c</code></pre>
-                                <ul>
+                                <pre><code class="css">ng g c component-name</code></pre>
+                                <ul class="list-arrow">
                                     <li>
                                         <code>g</code>: generate
                                     </li>
@@ -106,37 +106,144 @@ export class AppComponent {
                                 <p>
                                     Angular2 uses Annotations to define components like <code>@Component</code>
                                 </p>
+                                <ul class="list-arrow">
+                                    <li>
+                                        these annotations allow us to attach information to our component. We can
+                                        configure
+                                        the selector our Component will look for to instantiate itself (like
+                                        <code>&lt;app-root&gt;</code>), and also set the template.
+                                    </li>
+                                    <li>
+                                        <code>@Component</code> is the core annotation, and has a few important
+                                        parameters:
+                                    </li>
+                                    <li>
+                                        The <code>selector</code> param is the replacement for the auto-naming system of
+                                        directives in v1 and is now explicit: you must set it to exactly what you want
+                                        the
+                                        new component to be named in markup. It works much like
+                                        <code>querySelector</code>.
+                                    </li>
+                                    <li>
+                                        The <code>providers</code> param is part of the new Dependency Injection system,
+                                        and
+                                        configures which services we want to inject into our component (more on this in
+                                        a
+                                        later post).
+                                    </li>
+                                    <li>
+                                        We can use provide a template either inline, using <code>templateUrl</code>, or
+                                        point to an external file using <code>templateUrl</code>. This similar to how we
+                                        defined templates for custom directives in Angular 1.
+                                    </li>
+                                    <li>
+                                        We can provide the css that we want to apply for that particular component using
+                                        <code>styleUrls</code>.
+                                    </li>
+                                    <li>
+                                        The exported class is where we can define any variables or functions that our
+                                        component's template will be using
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-block" id="adding-component">
+                                <h3>Adding Component</h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p class="m-t-10">Type Following in terminal to generate <code>styled</code> component
+                                </p>
+                                <pre><code class="css">ng g c styled</code></pre>
+                                <p>Now we have four generated files in <code>app/styled</code> folder</p>
+                                <ul class="list-arrow">
+                                    <li><code>style.component.ts</code></li>
+                                    <li><code>style.component.spec.ts</code></li>
+                                    <li><code>style.component.html</code></li>
+                                    <li><code>style.component.css</code></li>
+                                </ul>
                                 <p>
-                                    these annotations allow us to attach information to our component. We can configure
-                                    the selector our Component will look for to instantiate itself (like
-                                    <code>&lt;app-root&gt;</code>), and also set the template.
+                                    <code>styled.component.ts</code>
                                 </p>
-                                <p><code>@Component</code> is the core annotation, and has a few important parameters:
+                                <pre><code class="javascript">import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-styled',
+  templateUrl: './styled.component.html',
+  styleUrls: ['./styled.component.css']
+})
+export class StyledComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+</code></pre>
+                                <p>
+                                    This component implements <code>OnInit</code> interface which has
+                                    <code>ngOnInit()</code> which will be called when component initialized.
                                 </p>
                                 <p>
-                                    The <code>selector</code> param is the replacement for the auto-naming system of
-                                    directives in v1 and is now explicit: you must set it to exactly what you want the
-                                    new component to be named in markup. It works much like <code>querySelector</code>.
+                                    To use this component we use <code>&lt;app-styled&gt;</code> selector in our html
+                                    file like,
                                 </p>
+                                <pre><code class="javascript">&lt;app-styled/&gt;</code></pre>
                                 <p>
-                                    The <code>providers</code> param is part of the new Dependency Injection system, and
-                                    configures which services we want to inject into our component (more on this in a
-                                    later post).
+                                    <code>styled.component.html</code>
                                 </p>
+                                <pre><code class="html">&lt;p&gt;This styles from global styles.css&lt;/p&gt;<br/>&lt;ng-content&gt;&lt;/ng-content&gt;</code></pre>
+                                <p><code>ng-content</code> is allow to access the content passed from the
+                                    <code>selector</code> of the component</p>
                                 <p>
-                                    We can use provide a template either inline, using <code>templateUrl</code>, or
-                                    point to an external file using <code>templateUrl</code>. This similar to how we
-                                    defined
-                                    templates for custom directives in Angular 1.
+                                    <code>app.component.ts</code>
                                 </p>
+                                <pre><code class="javascript">import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Components with basic CSS';
+}
+</code></pre>
                                 <p>
-                                    We can provide the css that we want to apply for that particular component using
-                                    <code>styleUrls</code>.
+                                    <code>app.component.html</code>
                                 </p>
-                                <p>
-                                    The exported class is where we can define any variables or functions that our
-                                    component's template will be using
-                                </p>
+                                <pre><code class="html">&lt;div class="container"&gt;
+  &lt;header&gt;
+    &lt;nav class="navbar navbar-default"&gt;
+      &lt;div class="container-fluid"&gt;
+        &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+        &lt;div class="navbar-header"&gt;
+          &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1" aria-expanded="false"&gt;
+            &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;a class="navbar-brand" href="#"&gt;Brand&lt;/a&gt;
+        &lt;/div&gt;
+
+          &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+        &lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+          &lt;ul class="nav navbar-nav"&gt;
+            &lt;li class="active"&gt;&lt;a href="#"&gt;Link 1&lt;span class="sr-only"&gt;(current)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;
+      &lt;/div&gt;&lt;!-- /.container-fluid --&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;section id="main"&gt;
+    &lt;h1&gt;
+      {{title}}
+    &lt;/h1&gt;
+    &lt;app-styled&gt;Content passed from app-styled&lt;/app-styled&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
                             </div>
                             <div class="d-block" id="tutorial-series">
                                 <h3>

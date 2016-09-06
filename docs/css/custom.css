@@ -33,3 +33,24 @@
     text-align: justify;
     margin-bottom: 12px;
 }
+
+.list-arrow {
+    list-style: outside none none;
+}
+
+.list-arrow li:before {
+    content: '\f2fb';
+    font-size: 25px;
+    font-family: "Material-Design-Iconic-Font";
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.list-arrow li {
+    color: #2b2b2b;
+    font-size: 15px;
+}
+
+pre {
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
