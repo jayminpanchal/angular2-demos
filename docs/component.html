@@ -244,6 +244,29 @@ export class AppComponent {
   &lt;/section&gt;
 &lt;/div&gt;
 </code></pre>
+                                <p>Finally, We have to declare all the component in our <code>app.module.ts</code> file.</p>
+                                <pre><code class="javascript">import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+import { StyledComponent } from './styled/styled.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    StyledComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }</code></pre>
                             </div>
                             <div class="d-block" id="tutorial-series">
                                 <h3>
@@ -252,7 +275,7 @@ export class AppComponent {
                                 <hr class="border-bluegray m-0"/>
                                 <ul class="list-unstyled m-t-10">
                                     <li>
-                                        <a href="#" class="list-group-item">
+                                        <a href="data-binding.html" class="list-group-item">
                                             4. Data Binding
                                         </a>
                                     </li>
