@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     alert(val);
   }
 
-  fireYellEvent(e){
+  fireYellEvent(e) {
     this.onYell.emit(e);
   }
 
