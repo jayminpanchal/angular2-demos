@@ -81,6 +81,120 @@
                                 <p><b>packages.json</b> contain essential file which contain reference to all packages
                                     needed for running Angular 2 app. See .gitignore file also. Automatically
                                     “OurPlanets” application is GIT repo, which we can push it if needed.</p>
+                                <p>
+                                    An Angular module class describes how the application parts fit together.
+                                    Every application has at least one Angular module, the <em>root</em> module
+                                    that you <a href="#main">bootstrap</a> to launch the application.
+                                    You can call it anything you want. The conventional name is <code>AppModule</code>.
+                                </p>
+                                <p>
+                                    <code>app/app.module.ts</code>
+                                </p>
+                                <pre><code class="javascript">import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }</code></pre>
+                                <p>
+                                    After the <code>import</code> statements, you come to a class adorned with the
+                                    <strong><code>@NgModule</code></strong><em>decorator</em>.
+                                </p>
+                                <p>The <code>@NgModule</code> decorator identifies <code>AppModule</code> as an Angular
+                                    module class (also called an <code>NgModule</code> class).
+                                    <code>@NgModule</code> takes a <em>metadata</em> object that tells Angular how to
+                                    compile and launch the application.</p>
+                                <ul class="list-arrow">
+                                    <li><strong><em>imports</em></strong> — the <code>BrowserModule</code> that this and
+                                        every application needs to run in a browser.
+                                    </li>
+                                    <li><strong><em>declarations</em></strong> — the application's lone component, which
+                                        is also ...
+                                    </li>
+                                    <li><strong><em>bootstrap</em></strong> — the <em>root</em> component that Angular
+                                        creates and inserts into the <code>index.html</code> host web page.
+                                    </li>
+                                </ul>
+                                <h3>The <em>imports</em> array</h3>
+                                <p>Angular modules are a way to consolidate features that belong together into discrete
+                                    units.
+                                    Many features of Angular itself are organized as Angular modules.
+                                    HTTP services are in the <code>HttpModule</code>. The router is in the <code>RouterModule</code>.
+                                    Eventually you may create a feature module.</p>
+                                <p>Add a module to the <code>imports</code> array when the application requires its
+                                    features.</p>
+                                <p><em>This</em> application, like most applications, executes in a browser.
+                                    Every application that executes in a browser needs the <code>BrowserModule</code>
+                                    from <code>@angular/platform-browser</code>.
+                                    So every such application includes the <code>BrowserModule</code> in its
+                                    <em>root</em> <code>AppModule</code>'s <code>imports</code> array.
+                                    Other guide and cookbook pages will tell you when you need to add additional modules
+                                    to this array.</p>
+                                <h3>The <em>declarations</em> array</h3>
+                                <p>You must declare <em>every</em> component in one (and <em>only one</em>) <code>NgModule</code>
+                                    class.
+                                    You tell Angular which components belong to the <code>AppModule</code> by listing it
+                                    in the module's <code>declarations</code> array.
+                                    As you create more components, you'll add them to <code>declarations</code>.</p>
+                                <h3>The <em>bootstrap</em> array</h3>
+                                <p>You launch the application by <a href="#main"><em>bootstrapping</em></a> the root
+                                    <code>AppModule</code>.
+                                    Among other things, the <em>bootstrapping</em> process creates the component(s)
+                                    listed in the <code>bootstrap</code> array
+                                    and inserts each one into the browser DOM.</p>
+                                <p>Each bootstrapped component is the base of its own tree of components.
+                                    Inserting a bootstrapped component usually triggers a cascade of component creations
+                                    that fill out that tree.</p>
+                                <p>While you can put more than one component tree on a host web page, that's not
+                                    typical.
+                                    Most applications have only one component tree and they bootstrap a single
+                                    <em>root</em> component.</p>
+                                <p>You can call the one <em>root</em> component anything you want but most developers
+                                    call it <code>AppComponent</code>.</p>
+                                <p>Which brings us to the <em>bootstrapping</em> process itself.</p>
+                                <h3>Bootstrap in <em>main.ts</em></h3>
+                                <p>There are many ways to bootstrap an application.
+                                    The variations depend upon how you want to compile the application and where you
+                                    want to run it.</p>
+                                <p>In the beginning, you will compile the application dynamically with the <em>Just-in-Time
+                                    (JIT)</em> compiler
+                                    and you'll run it in a browser. You can learn about other options later.</p>
+                                <p>The recommended place to bootstrap a JIT-compiled browser application is in a
+                                    separate file.</p>
+                                <p><code>main.ts</code></p>
+                                <pre><code class="javascript">import './polyfills.ts';
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment';
+import { AppModule } from './app/';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);</code></pre>
+                                <p>This code creates a browser platform for dynamic (JIT) compilation and
+                                    bootstraps the <code>AppModule</code> described above.</p>
+                                <p>The <em>bootstrapping</em> process sets up the execution environment,
+                                    digs the <em>root</em> <code>AppComponent</code> out of the module's <code>bootstrap</code> array, &nbsp;
+                                    creates an instance of the component and inserts it within the element tag identified by the component's <code>selector</code>.</p>
+                                <p>The <code>AppComponent</code> selector — here and in most documentation samples — is <code>my-app</code>
+                                    so Angular looks for a <code>&lt;my-app&gt;</code> tag in the <code>index.html</code> like this one ...</p>
                             </div>
                             <div class="d-block" id="tutorial-series">
                                 <h3>
