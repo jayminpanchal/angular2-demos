@@ -45,18 +45,11 @@
                                     binding in a single notation using the directive ngModel.
                                 </p>
                             </div>
-                            <div class="d-block" id="passing-data-to-component">
-                                <h3>
-                                    Component Communication
-                                </h3>
-                                <hr class="border-bluegray m-0"/>
-                            </div>
                             <div class="d-block" id="simple-data-binding">
                                 <h3>
                                     Simple Data Binding
                                 </h3>
-                                <hr class="border-bluegray m-0"/>
-                                <h4 class="m-t-5">Without using <strong>ngModel</strong></h4>
+                                <hr class="border-bluegray m-0 m-b-10"/>
                                 <pre><code class="html">  &lt;form class="form-horizontal"&gt;
       &lt;div class="form-group"&gt;
             &lt;input type="text" [value]="username" (input)="username=$event.target.value" class="form-control"/&gt;
@@ -100,6 +93,144 @@
                                     component).
                                 </p>
                             </div>
+                            <div class="d-block" id="ngmodel">
+                                <h3>
+                                    ngModel
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>
+                                    Since a scenario like the one shown above is very common, it just makes sense to
+                                    have a directive that abstracts things away and safes us some keystrokes.
+                                </p>
+                                <p>
+                                    <code>ngModel</code> actually comes with a property and event binding as well.
+                                    Here’s what our
+                                    example looks like using ngModel, but without using the shorthand syntax:
+                                </p>
+                                <pre><code class="html">&lt;input [ngModel]="username" (ngModelChange)="username = $event"&gt;
+
+&lt;p&gt;Hello {{username}}!&lt;/p&gt;</code></pre>
+                                <p>
+                                    Same rules apply. The property binding <code>[ngModel]</code> takes care of updating
+                                    the underlying input DOM element. The event binding <code>(ngModelChange)</code>
+                                    notifies the outside world when there was a change in the DOM. We also notice that
+                                    the handler expression uses only <code>$event</code> and no longer <code>$event.target.value</code>.
+                                    Why is that? As we’ve mentioned earlier, <code>$event</code> is the payload of the
+                                    emitted event. In other words, <code>ngModelChange</code> takes care of extracting
+                                    <code>target.value</code> from the inner <code>$event</code> payload, and simply
+                                    emits that (to be technically correct, it’s actually the
+                                    <code>DefaultValueAccessor</code> that takes of the extracting that value and also
+                                    writing to the underlying DOM object).
+                                </p>
+                                <p>
+                                    Last but not least, since writing <code>username</code> and <code>ngModel</code>
+                                    twice is still too much, Angular allows the shorthand syntax using <code>[()]</code>,
+                                    also called “Banana in a box”. So after all, it’s really an implementation detail of
+                                    <code>ngModel</code> that enables two-way data binding.
+                                </p>
+                                <pre><code class="html">&lt;div class="form-horizontal"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;input type="text" [(ngModel)]="usernameWithNgModel" class="form-control"/&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Hello {{usernameWithNgModel}}&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="d-block" id="component-communication">
+                                <h3>
+                                    Component Communication
+                                </h3>
+                                <hr class="border-bluegray m-0"/>
+                                <p>
+                                    Components are the core of an Angular 2 app but most developers need to know how to
+                                    pass data into components to dynamically configure them.
+                                </p>
+                                <h3><code>@Input</code></h3>
+                                <p>
+                                    To define an input for a component, we use the <code class="highlighter-rouge">@Input</code>
+                                    decorator.“Inputs”, as you might guess from the hierarchy, specifies which
+                                    properties you can set on a component
+                                </p>
+                                <p>
+                                    For example, our <code>&lt;app-home&gt;</code> component needs a
+                                    <code>user</code> argument as JSON Object to render information about that user:
+                                </p>
+                                <pre><code class="html"> &lt;app-home [user]="user"&gt;&lt;/app-home&gt;</code></pre>
+                                <p>
+                                    So, we add an <code>@Input</code> binding to <code>home.component.ts</code>:
+                                </p>
+                                <pre><code class="javascript">import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+    @Input() user;
+    constructor() {
+    }
+}</code></pre>
+                                <h3><code>@Output</code></h3>
+                                <p>
+                                    We can also pass values out of a child component back to the parent using an event
+                                    binding.
+                                    Let's see how.
+                                </p>
+                                <p>
+                                    In the child component we include an <code>@Output</code> decorator on a variable of
+                                    type <code>EventEmitter</code>. This object will be used to fire our custom events.
+                                </p>
+                                <pre><code class="javascript">@Output("value") colorValueEvent: EventEmitter&lt;string&gt; = new EventEmitter();</code></pre>
+                                <p>
+                                    The <code>value</code> alias in the <code>@Output</code> decorator is the name of
+                                    the event. If we omit the alias then the variable name is used instead (i.e. <code>colorValueEvent</code>).
+                                    The <code>&lt;string&gt;</code> type in angle brackets is the data type of the
+                                    payload to be sent with the event.
+                                </p>
+                                <p>
+                                    For example we want to call the event defined in parent class
+                                    <code>app.component.ts</code> from the <code>home.component.ts</code>,
+                                </p>
+                                <p>We have defined one function <code>yell()</code> in <code>app.component.ts</code></p>
+                                <pre><code class="javascript">yell(e: Event) {
+  alert("I am yelling.");
+  console.log(e);
+}</code></pre>
+                                <p>Then we need to pass it in our &lt;app-home&gt; as:</p>
+                                <pre><code class="html">&lt;app-home [user]="user" (onYell)="yell(e)"&gt;&lt;/app-home&gt;</code></pre>
+                                <p><code>home.component.ts</code></p>
+                                <pre><code class="javascript">import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+  @Output() onYell = new EventEmitter();
+  constructor() {
+  }
+  fireYellEvent(e) {
+    this.onYell.emit(e);
+  }
+}                                </code></pre>
+                                <p>We defined an <code>EventEmitter</code> <code>onYell</code> which will fire back when
+                                    <code>fireYellEvent()</code> is called.</p>
+                                <p><code>home.component.html</code></p>
+                                <pre><code>&lt;div class="panel panel-default"&gt;
+   &lt;div class="panel-heading"&gt;
+     &lt;h3 class="panel-title"&gt;Yelling Event Demo&lt;/h3&gt;
+   &lt;/div&gt;
+   &lt;div class="panel-body"&gt;
+     &lt;button (click)="fireYellEvent($event)" class="btn btn-danger"&gt;Click me!&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                <p>
+                                    Now, whenever we click on the button it will trigger the function <code>fireYellEvent()</code>
+                                    which will again emit the onYell Event and call the app.component
+                                    <code>yell()</code> function.
+                                </p>
+                            </div>
                             <div class="d-block" id="tutorial-series">
                                 <h3>
                                     Next Tutorial
@@ -108,7 +239,7 @@
                                 <ul class="list-unstyled m-t-10">
                                     <li>
                                         <a href="#" class="list-group-item">
-                                            4. Data Binding
+                                            5. Routing
                                         </a>
                                     </li>
                                 </ul>
